@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap"); /*importar fonte do google fonts, ele oferece essa url da fonte */
+
+:root
+{
+    --cor-background: #000000;
+    --cor-texto: #FFFFFF;
+    --cor-secundaria: #48A5F7;
+    --cor-destaques: #F0F779;
+    --cor-hover: #272727;
+}
+
+body 
+{
+    /*height: 100vh;    significa utilizar 100% do viewport height  */
+    box-sizing: border-box; /*   para manter os elementos do body dentro da área delimitada pelas bordas  */
+    background-color: var(--cor-background);
+    color: var(--cor-texto);  
+}
+
+.cabecalho
+{
+    padding: 2% 0% 0% 15%; /*1- superior; 2- direita 3- inferior 4- esquerda */
+}
+
+.cabecalho__menu
+{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link
+{
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cor-secundaria)
+}
+
+.apresentacao
+{
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo
+{
+    font-size: 2.25rem;
+    font-family: 'Roboto Mono', monospace; /* descrição correta também vem das propriedades no google fonts */
+}
+
+.titulo-destaque
+{
+    color: var(--cor-texto);
+}
+
+.apresentacao__conteudo__texto
+{
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', monospace; /* descrição correta também vem das propriedades no google fonts */
+}
+
+.apresentacao__botoes
+{
+    display: flex;
+    flex-direction: column; /* alinhar botões na vertical (padrão é horizontal) */
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem; /*separação entre elementos */
+}
+
+.apresentacao__botoes__subtitulo
+{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__botoes__botao
+{
+    /* background-color:#F0F779; */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border: 2px solid var(--cor-destaques);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1.6rem 0; /*no caso do padding, setar dois valores o primeiro é eixo y e o segundo é eixo x, se for um valor só, ele vai colocar padding para todos os lados */
+    text-decoration: none; /*tirar o link sublinhado clássico*/
+    color: var(--cor-destaques);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.apresentacao__botoes__botao:hover  /*hover é o efeito a ser aplicado quando o mouse passa por cima de, por ex, um botão */
+{
+    background-color: var(--cor-hover);
+    font-weight: 800;
+    border: 4px solid var(--cor-destaques);
+}
+
+.apresentacao__imagem
+{
+    width: 50%;
+}
+
+.rodape
+{
+    color: var(--cor-background);
+    background-color: var(--cor-secundaria);
+    padding: 24px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+@media (max-width: 1200px) /*é como se fosse um if, se o parenteses for verdadeiro ele aplica o conteúdo das chaves */
+{
+    .cabecalho
+    {
+        padding: 10%;
+    }
+    .cabecalho__menu
+    {
+        justify-content: center;
+    }
+
+    .apresentacao
+    {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .apresentacao__conteudo
+    {
+        width: auto;
+    }
+}
